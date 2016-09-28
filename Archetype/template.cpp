@@ -18,7 +18,7 @@ typedef vector<ll> VL;
 typedef pair<int, int> PII;
 
 //prefer define statement
-//for reason that const int ver. of INF will raise a silly warning
+//for reason that const int ver. of INF will raise a silly warning (unused variable)
 #define INF (INT_MAX/3)
 //const int INF = INT_MAX/3;
 
