@@ -1,13 +1,16 @@
 #include <algorithm>
+#include <deque>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
 #include <map> //pair is also included in this library
+#include <stack>
 #include <string>
 #include <vector>
 
-#define REP(i, s, n) for(int i = (int)(s); i < (int)(n); i++)
+#define INF INT_MAX/3
 
+#define REP(i, s, n) for(int i = (int)(s); i < (int)(n); i++)
 
 using namespace std;
 

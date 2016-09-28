@@ -20,7 +20,7 @@ vector<long long int> solve(long long int H, long long int W, long long int N, v
       for(long long int k = 0; k < 3; k++){
         if(square[i].first - j > 0 && square[i].second - k > 0 &&
            square[i].first - j + 2 <= H && square[i].second - k + 2 <= W){
-          list.push_back(make_pair(square[i].first - j, square[i].second - k));
+          list.push_back({square[i].first - j, square[i].second - k});
         }
       }
     }
@@ -53,7 +53,7 @@ int main(){
   long long int H, W, N;
   cin >> H >> W >> N;
 
-  vector<pair<long long int, long long int>> square(N);
+  vector<pair<long long int, long long int> > square(N);
   for(long long int i = 0; i < N; i++){
     long long int a, b;
     cin >> a >> b;
