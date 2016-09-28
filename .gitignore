@@ -36,6 +36,7 @@
 # Other undesired files
 # run "git rm -r --cached" after edit .gitignore and push
 Makefile
+!/Archetype/Makefile
 \#*#
 /Training/*
 /ant/*
@@ -44,3 +45,4 @@ Makefile
 .DS_Store
 *.pdf
 template.cpp
+!/Archetype/template.cpp
