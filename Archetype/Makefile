@@ -1,7 +1,7 @@
 #Makefile for Programming Contests
 
 CC=g++
-CFLAGS=-g -std=c++11 -Wall -Wextra -O2
+CFLAGS=-g -std=c++14 -O0 -Wall -Wextra
 # CXXS = $(wildcard *.cpp)
 
 # all: $(CXXS: %.cpp)
@@ -70,3 +70,5 @@ runE:
 .PHONY: clean
 clean:
 	rm *~ *.o
+
+.SUFFIXES:
