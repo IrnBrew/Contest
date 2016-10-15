@@ -46,6 +46,11 @@ templates:
 	cp -r template.cpp C.cpp
 	cp -r template.cpp D.cpp
 	cp -r template.cpp E.cpp
+	touch A.txt
+	touch B.txt
+	touch C.txt
+	touch D.txt
+	touch E.txt
 
 .PHONY: runA
 runA:

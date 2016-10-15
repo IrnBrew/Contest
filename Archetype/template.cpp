@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <iostream>
 #include <map> //pair is also included in this library
+#include <queue>
 #include <stack>
 #include <string>
 #include <vector>
