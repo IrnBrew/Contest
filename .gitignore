@@ -37,12 +37,22 @@
 # run "git rm -r --cached" after edit .gitignore and push
 Makefile
 !/Archetype/Makefile
+
+template.cpp
+!/Archetype/template.cpp
+
 \#*#
+
 /Training/*
 /ant/*
+
 *.txt
 *~
 .DS_Store
+
 *.pdf
-template.cpp
-!/Archetype/template.cpp
+
+AOJ*
+!AOJ*.cpp
+POJ*
+!POJ*.cpp
