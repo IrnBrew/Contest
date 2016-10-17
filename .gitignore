@@ -56,3 +56,5 @@ AOJ*
 !AOJ*.cpp
 POJ*
 !POJ*.cpp
+
+*/*.dSYM/
