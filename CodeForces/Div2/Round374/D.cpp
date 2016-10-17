@@ -22,34 +22,24 @@ typedef pair<int, int> PII;
 #define INF (INT_MAX/3)
 //const int INF = INT_MAX/3;
 
-ll solve(int N){
-  ll ans = -1;
+void solve(int n, int k, int x, VL v, VL ans){
+  sort(v.begin(), v.end());
+  
 
-  VL v(N);
-
-  //v[0] = 1;
-  v[1] = 1;
-
-  REP(i, 2, N+1){
-    if(i % 2 == 1){
-      v[i] = v[i-1] % 1000000000;
-    } else {
-      v[i] = (v[i/2] + v[i-1]) % 1000000000;
-    }
-  }
-  ans = v[N];
-
-  return ans;
+  return;
 }
 
 int main(){
-  int N;
+  ll n, k, x;
+  cin >> n >> k >> x;
 
-  cin >> N;
+  VL v(n), ans(3);
 
-  ll ans = solve(N);
+  REP(i, 0, n){
+    cin >> v[i];
+  }
 
-  cout << ans << endl;
+  solve(n, k, x, v, ans);
 
   return 0;
 }

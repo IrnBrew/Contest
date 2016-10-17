@@ -29,9 +29,9 @@ ll solve(int N, int A, VI v){
   REP(i, 0, N+1){
     REP(j, 0, N+1){
       REP(k, 0, N * A + 1){
-        if(j == 0 && k == 0){
+        if(i == 0 && j == 0 && k == 0){
           dp[i][0][0] = 1;
-        } else if(v[i] > k && j > 0){
+        } else if(v[i] > k && i > 0){
           dp[i][j][k] = dp[i-1][j][k];
         } else if(v[i] <= k && i > 0 && j > 0){
           dp[i][j][k] = dp[i-1][j][k] + dp[i-1][j-1][k-v[i]];
