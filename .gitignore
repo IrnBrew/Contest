@@ -52,9 +52,9 @@ template.cpp
 
 *.pdf
 
-AOJ*
+AOJ/AOJ*
 !AOJ*.cpp
-POJ*
+POJ/POJ*
 !POJ*.cpp
 
-/*.dSYM/
+*.dSYM/
