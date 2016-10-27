@@ -28,7 +28,35 @@ typedef pair<int, int> PII;
 /*------------------------------------------------------------------------------*/
 
 int main(){
-  
+  int K, T;
+
+  cin >> K >> T;
+
+  VI nums(T);
+  int max = 0, index = 0;
+
+  REP(i, 0, T){
+    cin >> nums[i];
+    if(max < nums[i]){
+      max = nums[i];
+      index = i;
+    }
+  }
+
+  int rest = 0;
+  REP(i, 0, T){
+    if(i != index){
+      rest += nums[i];
+    }
+  }
+
+  int ans = nums[index] - rest;
+
+  if(ans < 0){
+    cout << 0 << endl;
+  } else {
+    cout << ans - 1 << endl;
+  }
 
   return 0;
 }

@@ -1,5 +1,4 @@
 #include <algorithm>
-#include <climits>
 #include <deque>
 #include <fstream>
 #include <iomanip>
@@ -22,7 +21,6 @@ typedef pair<int, int> PII;
 //prefer define statement
 //for reason that const int ver. of INF will raise a silly warning (unused variable)
 #define INF (INT_MAX/3)
-#define LIM_INF (INT_MAX)
 //const int INF = INT_MAX/3;
 
 /*------------------------------------------------------------------------------*/

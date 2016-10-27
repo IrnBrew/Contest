@@ -1,5 +1,4 @@
 #include <algorithm>
-#include <climits>
 #include <deque>
 #include <fstream>
 #include <iomanip>
@@ -22,13 +21,29 @@ typedef pair<int, int> PII;
 //prefer define statement
 //for reason that const int ver. of INF will raise a silly warning (unused variable)
 #define INF (INT_MAX/3)
-#define LIM_INF (INT_MAX)
 //const int INF = INT_MAX/3;
 
 /*------------------------------------------------------------------------------*/
 
-int main(){
+ll solve(ll N, VL D){
+  ll ans = 0;
+
   
+
+  return ans;
+}
+
+int main(){
+  ll N;
+  cin >> N;
+
+  VL D(N);
+
+  REP(i, 0, N){
+    D[i];
+  }
+
+  cout << solve(N, D) << endl;
 
   return 0;
 }

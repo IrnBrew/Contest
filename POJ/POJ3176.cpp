@@ -27,7 +27,6 @@ ll solve(ll N, vector<VL> v){
 
   vector<VL> s(N+1, VL(N+1));
 
-
   REP(i, 0, N){
     REP(j, 0, i+1){
       if(i == 0 && j == 0){

@@ -28,7 +28,25 @@ typedef pair<int, int> PII;
 /*------------------------------------------------------------------------------*/
 
 int main(){
-  
+  string s;
+
+  cin >> s;
+
+  bool f1 = false, ans = false;
+
+  REP(i, 0, s.size()){
+    if(f1 == false && s[i] == 'C'){
+      f1 = true;
+    } else if(f1 == true && s[i] == 'F'){
+      ans = true;
+    }
+  }
+
+  if(ans == true){
+    cout << "Yes" << endl;
+  } else {
+    cout << "No" << endl;
+  }
 
   return 0;
 }
