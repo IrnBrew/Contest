@@ -13,6 +13,9 @@
 #include <vector>
 
 #define REP(i, s, n) for(int i = (int)(s); i < (int)(n); i++)
+#define fst first
+#define snd second
+#define MP make_pair //incase c++11 or later is not available
 
 using namespace std;
 
