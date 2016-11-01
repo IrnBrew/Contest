@@ -84,6 +84,7 @@ int main(){
       int a, b, c;
       cin >> a >> b >> c;
       es.push_back(MP(MP(a, b), c));
+      es.push_back(MP(MP(b, a), c));
     }
     REP(i, 0, W){
       int a, b, c;
