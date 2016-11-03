@@ -1,7 +1,7 @@
 void init(int n){
   REP(i, 0, n){
     par[i] = i;
-    rank[i] = 0;
+    rnk[i] = 0;
   }
 }
 
@@ -20,12 +20,12 @@ void unite(int x, int y){
     return;
   }
 
-  if(rank[x] < rank[y]){
+  if(rnk[x] < rnk[y]){
     par[x] = y;
   } else {
     par[y] = x;
-    if(rank[x] == rank[y]){
-      rank[x]++;
+    if(rnk[x] == rnk[y]){
+      rnk[x]++;
     }
   }
 }
