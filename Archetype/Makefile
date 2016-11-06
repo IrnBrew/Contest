@@ -74,6 +74,6 @@ runE:
 
 .PHONY: clean
 clean:
-	rm *~ *.o
+	rm -r *~ *.out *.o *.dSYM
 
 .SUFFIXES:
