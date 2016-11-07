@@ -34,7 +34,7 @@ typedef pair<ll, ll> PLL;
 /*------------------------------------------------------------------------------*/
 
 void devs(vector<ll>& v, ll N){
-  for(ll i = 2; N != 1; i++){
+  for(ll i = 2; N != 1 && i * i <= N; i++){
     ll num = 0;
     while(N % i == 0 && N > 0){
       N /= i;
@@ -44,6 +44,10 @@ void devs(vector<ll>& v, ll N){
       v.push_back(num);
     }
   }
+  if(N > 1){
+    v.push_back(1);
+  }
+  return;
 }
 
 int main(){
