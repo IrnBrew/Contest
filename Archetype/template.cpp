@@ -23,6 +23,7 @@ typedef long long int ll;
 typedef vector<int> VI;
 typedef vector<ll> VL;
 typedef pair<int, int> PII;
+typedef pair<ll, ll> PLL;
 
 //prefer define statement
 //for reason that const int ver. of INF will raise a silly warning (unused variable)
