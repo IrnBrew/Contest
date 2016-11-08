@@ -36,33 +36,42 @@ typedef pair<ll, ll> PLL;
 
 PII s;
 
-int bfs(const vector<vector<char> >& f, int H, int W, int n, PII sp){
+int bfs(const vector<string>& f, int H, int W, int N, PII sp){
   int res = 0;
-  vector<VI > cost(H, VI(W, INF));
+  int n = 1;
+  vector<VI> cost(H, VI(W, INF));
+  const vector<VI> init(H, VI(W, INF));
   int ini_y = sp.fst, ini_x = sp.snd;
   cost[ini_y][ini_x] = 0;
 
-  queue<pair<PII, int> > q;
-  q.push(MP(MP(ini_y, ini_x), 0));
+  queue<PII> q;
+  q.push(MP(ini_y, ini_x));
 
   int mx[4] = {-1, 0, 1, 0};
   int my[4] = {0, -1, 0, 1};
 
   while(!q.empty()){
-    pair<PII, int> p = q.front();
+    PII p = q.front();
     q.pop();
-    int y = p.fst.fst, x = p.fst.snd, c = p.snd;
+    int y = p.fst, x = p.snd;
     if(f[y][x] == (char)('0' + n)){
-      res = c;
-      s.fst = y;
-      s.snd = x;
-      break;
+      res += cost[y][x];
+      while(!q.empty()){
+        q.pop();
+      }
+      q.push({y, x});
+      cost.assign(init.begin(), init.end());
+      cost[y][x] = 0;
+      n++;
+      if(n == N+1){
+        break;
+      }
     }
     REP(i, 0, 4){
       int ny = y + my[i], nx = x + mx[i];
-      if(f[ny][nx] != 'X' && cost[ny][nx] > c + 1){
-        cost[ny][nx] = c + 1;
-        q.push(MP(MP(ny,nx), c + 1));
+      if(f[ny][nx] != 'X' && cost[ny][nx] > cost[y][x] + 1){
+        cost[ny][nx] = cost[y][x] + 1;
+        q.push({ny,nx});
       }
     }
   }
@@ -70,38 +79,33 @@ int bfs(const vector<vector<char> >& f, int H, int W, int n, PII sp){
   return res;
 }
 
-int solve(const vector<vector<char> >& f, int H, int W, int N, PII p){
-  int ans = 0;
-  s = p;
-
-  REP(i, 1, N+1){
-    ans += bfs(f, H, W, i, s);
-  }
-  return ans;
-}
-
 int main(){
   int H, W, N;
   cin >> H >> W >> N;
 
-  vector<vector<char> > f(H+2, vector<char>(W+2));
-  int y, x;
-  REP(i, 0, H+2){
-    REP(j, 0, W+2){
-      if(i == 0 || i == H+1 || j == 0 || j == W+1){
-        f[i][j] = 'X';
-      } else {
-        cin >> f[i][j];
-        if(f[i][j] == 'S'){
-          y = i;
-          x = j;
-        }
-      }
-      cout << f[i][j];
-    }
-    cout << endl;
+  vector<string> f;
+  f.push_back(string(W+2, 'X'));
+  REP(i, 0, H){
+    string tmp;
+    cin >> tmp;
+    f.push_back('X' + tmp + 'X');
+  }
+  f.push_back(string(W+2, 'X'));
+
+  REP(i, 0, f.size()){
+    cout << f[i] << endl;
   }
 
-  cout << solve(f, H+2, W+2, N, MP(y, x)) << endl;
+  int y, x;
+  REP(i, 1, H+1){
+    REP(j, 1, W+1){
+      if(f[i][j] == 'S'){
+        y = i;
+        x = j;
+      }
+    }
+  }
+
+  cout << bfs(f, H+2, W+2, N, {y, x}) << endl;
   return 0;
 }
