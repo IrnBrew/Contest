@@ -59,6 +59,9 @@ int main(){
       }
       a++; b--;
     }
+    if(a > b){
+      h++;
+    }
     ans.push_back(v[id]);
   }
 
@@ -68,6 +71,7 @@ int main(){
     }
     cout << ans[i];
   }
+  cout << endl;
 
   return 0;
 }

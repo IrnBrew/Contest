@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <cmath>
 #include <climits>
+#include <cstring>
 #include <deque>
 #include <fstream>
 #include <iomanip>

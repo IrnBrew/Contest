@@ -34,8 +34,6 @@ typedef pair<ll, ll> PLL;
 
 /*------------------------------------------------------------------------------*/
 
-PII s;
-
 int bfs(const vector<string>& f, int H, int W, int N, PII sp){
   int res = 0;
   int n = 1;

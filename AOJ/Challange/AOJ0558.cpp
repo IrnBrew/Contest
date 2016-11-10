@@ -57,14 +57,13 @@ int bfs(vector<vector<char> > f, int H, int W, int n, PII sp){
       s.fst = y;
       s.snd = x;
       break;
-    } else {
-      REP(i, 0, 4){
-        int ny = y + my[i], nx = x + mx[i];
-        if(ny >= 0 && ny < H && nx >= 0 && nx < W &&
-           f[ny][nx] != 'X' && cost[ny][nx] > c + 1){
-          cost[ny][nx] = c + 1;
-          q.push(MP(MP(ny,nx), c + 1));
-        }
+    }
+    REP(i, 0, 4){
+      int ny = y + my[i], nx = x + mx[i];
+      if(ny >= 0 && ny < H && nx >= 0 && nx < W &&
+         f[ny][nx] != 'X' && cost[ny][nx] > c + 1){
+        cost[ny][nx] = c + 1;
+        q.push(MP(MP(ny,nx), c + 1));
       }
     }
   }
