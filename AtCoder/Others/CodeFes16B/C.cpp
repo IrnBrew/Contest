@@ -64,7 +64,7 @@ void unite(map<PII, PII> &par, map<PII, int> &rank, PII k1, PII k2){
   } else {
     par[y] = x;
     if(rank[x] == rank[y]){
-      rank[y]++;
+      rank[x]++;
     }
   }
   return;
