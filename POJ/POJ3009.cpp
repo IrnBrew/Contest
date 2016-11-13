@@ -45,12 +45,15 @@ typedef struct{
 
 void dfs(Curl t,
          priority_queue<int, VI, greater<int> >& ans,
-         vector<VI > f){
+         vector<VI >& f){
 
   int y = t.pos.fst;
   int x = t.pos.snd;
   int m = t.move;
-  
+
+  if(t.cost > 10){
+    return;
+  }
   if(t.move == -1){
     t.cost++;
     REP(i, 0, 4){
@@ -60,8 +63,6 @@ void dfs(Curl t,
         dfs(t, ans, f);
       }
     }
-  } else if(t.cost > 10){
-    return;
   } else {
     int ny = y;
     int nx = x;
@@ -76,8 +77,9 @@ void dfs(Curl t,
       } else if(f[ny][nx] == 1){
         t.move = -1;
         t.pos = MP(ny - dy[m], nx - dx[m]);
-        f[ny][nx] = 0;
+        f[ny][nx] = 0;        
         dfs(t, ans, f);
+        f[ny][nx] = 1;
         break;
       }
     }
@@ -85,7 +87,6 @@ void dfs(Curl t,
 
   return;
 }
-
 
 int main(){
   int H, W;
@@ -109,13 +110,6 @@ int main(){
       }
     }
 
-    REP(i, 0, H+2){
-      REP(j, 0, W+2){
-        cout << f[i][j];
-      }
-      cout << endl;
-    }
-
     priority_queue<int, VI, greater<int> > ans;
     ans.push(INF);
 
@@ -131,7 +125,6 @@ int main(){
     } else {
       cout << a << endl;
     }
-    cout << "-----------------------------" << endl;
   }
 
   return 0;
