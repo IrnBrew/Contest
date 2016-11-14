@@ -45,15 +45,23 @@ typedef struct{
 
 void dfs(Curl t,
          priority_queue<int, VI, greater<int> >& ans,
+<<<<<<< HEAD
          vector<VI >& f){
+=======
+         vector<VI > f){
+>>>>>>> 3f596a951ed8873e12417816ec6980cfe58cca60
 
   int y = t.pos.fst;
   int x = t.pos.snd;
   int m = t.move;
+<<<<<<< HEAD
 
   if(t.cost > 10){
     return;
   }
+=======
+  
+>>>>>>> 3f596a951ed8873e12417816ec6980cfe58cca60
   if(t.move == -1){
     t.cost++;
     REP(i, 0, 4){
@@ -63,6 +71,11 @@ void dfs(Curl t,
         dfs(t, ans, f);
       }
     }
+<<<<<<< HEAD
+=======
+  } else if(t.cost > 10){
+    return;
+>>>>>>> 3f596a951ed8873e12417816ec6980cfe58cca60
   } else {
     int ny = y;
     int nx = x;
@@ -77,9 +90,14 @@ void dfs(Curl t,
       } else if(f[ny][nx] == 1){
         t.move = -1;
         t.pos = MP(ny - dy[m], nx - dx[m]);
+<<<<<<< HEAD
         f[ny][nx] = 0;        
         dfs(t, ans, f);
         f[ny][nx] = 1;
+=======
+        f[ny][nx] = 0;
+        dfs(t, ans, f);
+>>>>>>> 3f596a951ed8873e12417816ec6980cfe58cca60
         break;
       }
     }
@@ -88,6 +106,10 @@ void dfs(Curl t,
   return;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3f596a951ed8873e12417816ec6980cfe58cca60
 int main(){
   int H, W;
 
@@ -110,6 +132,16 @@ int main(){
       }
     }
 
+<<<<<<< HEAD
+=======
+    REP(i, 0, H+2){
+      REP(j, 0, W+2){
+        cout << f[i][j];
+      }
+      cout << endl;
+    }
+
+>>>>>>> 3f596a951ed8873e12417816ec6980cfe58cca60
     priority_queue<int, VI, greater<int> > ans;
     ans.push(INF);
 
@@ -125,6 +157,10 @@ int main(){
     } else {
       cout << a << endl;
     }
+<<<<<<< HEAD
+=======
+    cout << "-----------------------------" << endl;
+>>>>>>> 3f596a951ed8873e12417816ec6980cfe58cca60
   }
 
   return 0;
