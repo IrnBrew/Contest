@@ -2,6 +2,7 @@
 #include <cmath>
 #include <climits>
 #include <cstring>
+#include <cstdio>
 #include <deque>
 #include <fstream>
 #include <iomanip>
