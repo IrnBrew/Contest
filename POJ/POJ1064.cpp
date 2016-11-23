@@ -46,21 +46,19 @@ int main(){
 
   double lb = 0.00;
   double ub = INF;
-  REP(j, 0, 100){
+  while(ub - lb > 0.001){
     double md = (lb + ub) / 2;
     int res = 0;
     REP(i, 0, N){
       res += (int)(cable[i] / md);
     }
-    if(res >= K){
-      lb = md;
-    } else {
+    if(res < K){
       ub = md;
+    } else {
+      lb = md;
     }
   }
-  
   ub = floor((ub * 100)) / 100;
-  printf("%.2lf\n", ub);
-
+  printf("%.2f\n", ub);
   return 0;
 }
