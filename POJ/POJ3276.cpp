@@ -58,12 +58,9 @@ int main(){
     int sum = 0;
     VI f(N, 0);
     REP(j, 0, N-k+1){
-      //printf("sum + c[%d] = %d\n", j, sum+c[j]);
       if(((sum + c[j]) % 2) != 0){
-        //printf("%d: %d sum: %d\n", i, j, sum);
         res++;
         f[j]++;
-        //printf("%d res:%d\n", j, res);
       }
       sum += f[j];
       if(j-k+1 >= 0){
@@ -72,22 +69,18 @@ int main(){
     }
     bool face = true;
     REP(j, N-k+1, N){
-      //printf("%d %d: face? sum: %d c[%d]: %d\n", k, j, sum, j, c[j]);
       if((sum + c[j]) % 2 != 0){
         face = false;
         break;
       }
       if(j - k + 1 >= 0){
-        //printf("f[%d] %d\n", j-k+1, f[j-k+1]);
         sum -= f[j-k+1];
       }
     }
     if(ans > res && face){
-      //printf("i: %d, res:%d\n", i, res);
       ans = res;
       K = k;
     }
-    //printf("--------------------\n");
   }
   if(ans != INF){
     printf("%d %d\n", K, ans);
