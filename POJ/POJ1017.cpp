@@ -59,13 +59,12 @@ int main(){
           ans += pack[siz-1];
           pack[siz-1] = 0;
           break;
-        case 5:
-          pack[siz-1]--;
-          ans++;
-          if(pack[0] > 0){
-            pack[0] -= 11;
-          }
+        case 5:{
+          ans += pack[siz-1];
+          pack[0] -= 11 * pack[siz-1];
+          pack[siz-1] = 0;
           break;
+        }
         case 4:
           pack[siz-1]--;
           ans++;
