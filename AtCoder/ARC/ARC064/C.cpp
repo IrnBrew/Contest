@@ -50,11 +50,8 @@ int main(){
     VL seq = v;
     ll used = 0;
     ll mid = (lb + ub) / 2;
-    //printf("lb: %lld, ub: %lld\n", lb, ub);
-    //printf("mid: %lld\n", mid);
 
     REP(i, 0, N-1){
-      //printf("seq[%d], seq[%d]: %lld + %lld = %lld\n", i, i+1, seq[i], seq[i+1], seq[i] + seq[i+1]);
       if(seq[i] + seq[i+1] > x){
         int sub = (seq[i] + seq[i+1]) - x;
         used += sub;
@@ -72,8 +69,6 @@ int main(){
     } else {
       ub = mid;
     }
-    //printf("used: %lld\n", used);
-    //printf("lb: %lld, ub: %lld\n\n", lb, ub);
   }
   printf("%lld\n", lb);
 
