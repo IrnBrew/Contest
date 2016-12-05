@@ -38,7 +38,7 @@ typedef pair<ll, ll> PLL;
 int main(){
   ll N;
   ll seq[100001];
-  while(scanf("%lld/n", &N) != EOF){
+  while(scanf("%lld\n", &N) != EOF){
     REP(i, 0, N){
       scanf("%lld ", &seq[i]);
     }
@@ -49,8 +49,17 @@ int main(){
     while(ub - lb > 1){
       ll mid = (ub + lb) / 2;
       ll cnt = 0;
-      REP(i, 0, N){
-        cnt += (seq + N) - lower_bound(seq + i + 1, seq + N, seq[i] + mid);
+      int head = 0, tail = 1;
+      while(tail != N){
+        if(seq[tail] - seq[head] >= mid){
+          cnt += N - tail;
+          head++;
+          if(head == tail){
+            tail++;
+          }
+        } else {
+          tail++;
+        }
       }
       if(cnt > S / 2){
         lb = mid;
@@ -60,6 +69,5 @@ int main(){
     }
     printf("%lld\n", lb);
   }
-
   return 0;
 }
