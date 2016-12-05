@@ -84,15 +84,12 @@ int main(){
         v = j;
       }
     }
-    //printf("bef,d[%d]: %lf \n\n", v, d[v]);
     if(v == -1){
       break;
     }
     used[v] = true;
     REP(i, 0, N + 2){
-      //printf("es[%d][%d]: %lf\n", v, i, es[v][i]);
       d[i] = min(d[i], d[v] + es[v][i]);
-      //printf("d[%d]: %lf\n\n", i, d[i]);
     }
   }
   printf("%.10lf\n", d[N+1]);
