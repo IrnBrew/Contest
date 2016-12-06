@@ -71,6 +71,5 @@ int main(){
     }
     printf("%d\n", (int)(lb + 0.5));
   }
-
   return 0;
 }
