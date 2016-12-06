@@ -54,7 +54,7 @@ int main(){
       cnt++;
     }
   }
-  if(cnt > 1){
+  if(cnt >= 1){
     aps.push_back(cnt);
   }
 
@@ -62,7 +62,7 @@ int main(){
   REP(i, 0, W+1){
     REP(j, 1, aps.size()+1){
       if((j+1) % 2 == i % 2 && i == 0){
-        dp[i][j] = max(dp[i][j-1] + aps[j-1], dp[i][j-1] + aps[j-1]);
+        dp[i][j] = dp[i][j-1] + aps[j-1];
       } else if((j+1) % 2 == i % 2 && i > 0){
         dp[i][j] = max(dp[i][j-1] + aps[j-1], dp[i-1][j-1] + aps[j-1]);
       } else {
