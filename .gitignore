@@ -35,6 +35,7 @@
 
 # Other undesired files
 # run "git rm -r --cached ." after edit .gitignore and push
+
 Makefile
 !/Archetype/Makefile
 
