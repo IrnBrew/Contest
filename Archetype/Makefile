@@ -1,43 +1,49 @@
 #Makefile for Programming Contests
 
 CC=g++
-CFLAGS=-g -std=c++14 -O0 -Wall -Wextra
+CXXFLAGS=-g -std=c++14 -O0 -Wall -Wextra
 # CXXS = $(wildcard *.cpp)
 
 # all: $(CXXS: %.cpp)
+
+%.run: %.out
+	./$< < $(patsubst %.run, %.txt, $@)
+
+%.out:
+	$(CC) $(CXXFLAGS) -o $@ $(patsubst %.out, %.cpp, $@)
 
 .PHONY: all
 all: A B C D E
 
 A: A.o
-	$(CC) $(CFLAGS) -o $@.out $<
+	$(CC) $(CXXFLAGS) -o $@.out $<
 
 A.o: A.cpp
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CXXFLAGS) -c -o $@ $<
 
 B: B.o
-	$(CC) $(CFLAGS) -o $@.out $<
+	$(CC) $(CXXFLAGS) -o $@.out $<
 
 B.o: B.cpp
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CXXFLAGS) -c -o $@ $<
 
 C: C.o
-	$(CC) $(CFLAGS) -o $@.out $<
+	$(CC) $(CXXFLAGS) -o $@.out $<
 
 C.o: C.cpp
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CXXFLAGS) -c -o $@ $<
 
 D: D.o
-	$(CC) $(CFLAGS) -o $@.out $<
+	$(CC) $(CXXFLAGS) -o $@.out $<
 
 D.o: D.cpp
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CXXFLAGS) -c -o $@ $<
 
 E: E.o
-	$(CC) $(CFLAGS) -o $@.out $<
+	$(CC) $(CXXFLAGS) -o $@.out $<
 
 E.o: E.cpp
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CXXFLAGS) -c -o $@ $<
 
 .PHONY: templates
 templates:
