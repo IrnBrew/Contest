@@ -33,7 +33,7 @@ typedef pair<ll, ll> PLL;
 #define INF (INT_MAX/3)
 #define LIM_INF (INT_MAX)
 //const int INF = INT_MAX/3;
-
+#define PI = 3.14159265358979323846
 /*------------------------------------------------------------------------------*/
 
 int main(){
