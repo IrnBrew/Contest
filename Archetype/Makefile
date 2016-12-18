@@ -2,9 +2,10 @@
 
 CC=g++
 CXXFLAGS=-g -std=c++14 -O0 -Wall -Wextra
-# CXXS = $(wildcard *.cpp)
 
 # all: $(CXXS: %.cpp)
+
+.PRECIOUS: %.out
 
 %.run: %.out
 	./$< < $(patsubst %.run, %.txt, $@)
